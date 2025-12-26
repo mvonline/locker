@@ -1,0 +1,53 @@
+{
+    "name": "mvonline/locker",
+    "version": "1.0.0",
+    "description": "A comprehensive, cache-driver-agnostic distributed locking framework for Laravel",
+    "type": "library",
+    "keywords": ["laravel", "lock", "distributed", "cache", "concurrency"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Masoud",
+            "email": "masoud@example.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "illuminate/cache": "^10.0|^11.0|^12.0",
+        "illuminate/events": "^10.0|^11.0|^12.0",
+        "illuminate/contracts": "^10.0|^11.0|^12.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0",
+        "phpunit/phpunit": "^10.0",
+        "mockery/mockery": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mvonline\\Locker\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mvonline\\Locker\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mvonline\\Locker\\LockerServiceProvider"
+            ],
+            "aliases": {
+                "Locker": "Mvonline\\Locker\\Facades\\Locker"
+            }
+        }
+    },
+    "scripts": {
+        "test": "phpunit --no-coverage",
+        "test:coverage": "phpunit --coverage-html coverage"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
+
